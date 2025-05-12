@@ -36,3 +36,216 @@
     transform: rotate(360deg);
   }
 }
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.topic{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    margin-top: 45px;
+    color: aliceblue;
+
+}
+
+/* Navbar */
+.navbar {
+  width: 220px;
+  background-color: #1e293b;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease-in-out;
+}
+.down{
+    margin-top:50px;
+}
+.navbar.hidden {
+  transform: translateX(-100%);
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+}
+
+/* Content */
+.content {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f1f5f9;
+  overflow-y: auto;
+  position: relative;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  margin-top:45px;
+}
+
+/* Burger Button */
+.burger-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1100;
+  display: none;
+  background-color: #fff;
+}
+
+@media (max-width: 768px) {
+  .burger-btn {
+    display: block;
+  }
+
+  .navbar {
+    position: absolute;
+    z-index: 1000;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  .content {
+    margin-left: 0;
+  }
+}
+
+/* Add Button */
+.add-btn {
+  display: flex;
+  align-items: center;
+  background-color: #0f766e;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.add-btn svg {
+  margin-right: 8px;
+}
+
+/* Form */
+.address-form {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+
+}
+
+.address-form input {
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 5px;
+  flex: 1 1 45%;
+}
+
+.address-form button {
+  background-color: #2563eb;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  flex: 1 1 100%;
+}
+
+/* Address Cards */
+.address-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.address-card {
+  background: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  position: relative;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.address-card h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #1e293b;
+}
+
+.address-card p {
+  margin: 6px 0;
+  color: #475569;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.address-card svg {
+  margin-right: 8px;
+}
+
+/* Dropdown */
+.dots-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 15px;
+  top: 45px;
+  background: white;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  z-index: 10;
+}
+
+.dropdown-menu button {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 10px 15px;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+}
